@@ -1,17 +1,26 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./app/*"]
     }
   },
-  "include": [
+  "include": [  
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/victory/*",  // Excluir si hay alguna carpeta o archivo relacionado con victory
+    "**/jest/*"      // Excluir si hay alguna carpeta o archivo relacionado con jest
   ]
 }
